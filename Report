@@ -1,0 +1,208 @@
+WIRESHARK NETWORK PROTOCOL ANALYSIS
+
+Project Domain: Computer Networks & Cybersecurity
+Tool: Wireshark
+Project Type: Network Traffic Analysis
+Level: Beginner to Intermediate
+
+ABSTRACT
+
+Network communication plays an essential role in modern computing. Different protocols work together to enable communication between devices over local and global networks.
+
+This project focuses on analyzing network traffic using Wireshark, an open-source packet analysis tool. It examines commonly used network protocols, including TCP, UDP, DNS, HTTP, HTTPS, ARP, DHCP, ICMP, and TLS.
+
+The project demonstrates packet capturing, protocol identification, display filtering, and network traffic inspection. It also discusses common network security observations and the importance of encrypted communication.
+
+1. INTRODUCTION
+
+Wireshark is a widely used network protocol analyzer that allows users to capture and inspect packets transmitted across a network.
+
+It provides detailed information about network communication, including source and destination addresses, ports, protocols, packet lengths, and protocol-specific fields.
+
+Wireshark is useful for:
+
+Network troubleshooting.
+Protocol analysis.
+Cybersecurity investigations.
+Network performance monitoring.
+Educational networking experiments.
+2. OBJECTIVES
+Understand the working principles of network protocols.
+Capture network packets using Wireshark.
+Identify different protocols in network traffic.
+Analyze packet headers and communication patterns.
+Apply protocol-specific display filters.
+Understand basic network security risks.
+Document network analysis findings.
+3. SOFTWARE AND REQUIREMENTS
+Component	Description
+Wireshark	Network protocol analyzer
+Operating System	Windows / Linux / macOS
+Network Interface	Wi-Fi / Ethernet
+Internet Connection	For generating sample traffic
+PCAP / PCAPNG	Packet capture file format
+4. NETWORK ARCHITECTURE
+
+A typical network communication process involves a client, a network infrastructure, and a destination server.
+
+The network interface captures packets while Wireshark analyzes the captured traffic.
+
+5. PROTOCOL ANALYSIS
+5.1 ARP – Address Resolution Protocol
+
+ARP maps an IPv4 address to a MAC address within a local network.
+
+Working:
+
+A device checks its ARP cache.
+If the MAC address is unknown, it broadcasts an ARP request.
+The device with the matching IP address responds.
+The sender stores the mapping in its ARP cache.
+
+Wireshark Filter: arp
+
+5.2 DNS – Domain Name System
+
+DNS translates domain names into IP addresses.
+
+For example, a client requests the IP address associated with a website domain.
+
+Wireshark Filter: dns
+
+5.3 DHCP – Dynamic Host Configuration Protocol
+
+DHCP automatically assigns network configuration to devices.
+
+The four main stages are:
+
+Discover
+Offer
+Request
+Acknowledge
+
+Wireshark Filter: dhcp
+
+5.4 TCP – Transmission Control Protocol
+
+TCP provides reliable and ordered data transmission.
+
+It uses acknowledgements, sequence numbers, and retransmissions.
+
+Three-way handshake:
+
+SYN
+SYN-ACK
+ACK
+
+Wireshark Filter: tcp
+
+5.5 UDP – User Datagram Protocol
+
+UDP provides connectionless communication with low overhead.
+
+It is commonly used in DNS, voice communication, and streaming applications.
+
+Wireshark Filter: udp
+
+5.6 HTTP – Hypertext Transfer Protocol
+
+HTTP is an application-layer protocol used for communication between web clients and servers.
+
+It supports methods such as GET, POST, PUT, and DELETE.
+
+Wireshark Filter: http
+
+5.7 HTTPS and TLS
+
+HTTPS uses TLS to protect HTTP communication through encryption and authentication.
+
+Encrypted application data generally cannot be read directly from an ordinary packet capture.
+
+Wireshark Filter: tls
+
+5.8 ICMP – Internet Control Message Protocol
+
+ICMP is used for network diagnostics and error reporting.
+
+The ping command commonly uses ICMP Echo Request and Echo Reply messages.
+
+Wireshark Filter: icmp
+
+6. WIRESHARK DISPLAY FILTERS
+Purpose	Filter
+ARP packets	arp
+DNS traffic	dns
+DHCP traffic	dhcp
+TCP traffic	tcp
+UDP traffic	udp
+HTTP traffic	http
+TLS traffic	tls
+ICMP traffic	icmp
+Specific IP	ip.addr == 192.168.1.1
+Source IP	ip.src == 192.168.1.1
+Destination IP	ip.dst == 192.168.1.1
+TCP port 443	tcp.port == 443
+DNS queries	dns.flags.response == 0
+TCP SYN packets	tcp.flags.syn == 1
+7. PACKET CAPTURE METHODOLOGY
+Install Wireshark.
+Open the application.
+Select an active network interface.
+Start packet capture.
+Generate network traffic.
+Apply display filters.
+Inspect packet details.
+Analyze source and destination information.
+Export the capture as PCAPNG.
+Document the observations.
+8. SECURITY OBSERVATIONS
+
+Wireshark can help identify unusual network communication patterns.
+
+Examples include:
+
+Unencrypted HTTP communication.
+Unexpected DNS queries.
+Repeated TCP connection attempts.
+Unusual ARP responses.
+Unexpected traffic to unfamiliar destinations.
+Repeated TCP retransmissions.
+
+These observations are indicators for further investigation, not proof of malicious activity.
+
+9. RESULTS AND DISCUSSION
+
+The packet analysis process helps identify the protocols used in network communication.
+
+The Protocol Hierarchy feature provides an overview of protocols present in a capture.
+
+The Conversations feature helps examine communication between endpoints.
+
+The Endpoints feature provides information about communicating hosts.
+
+Important: Actual packet counts, IP addresses, protocol percentages, and screenshots should be added after performing a real capture. No experimental measurements are assumed in this report.
+
+10. APPLICATIONS
+Network troubleshooting.
+Cybersecurity analysis.
+Protocol debugging.
+Network performance analysis.
+Educational networking laboratories.
+Incident investigation.
+11. CONCLUSION
+
+This project demonstrates the importance of network protocol analysis using Wireshark.
+
+By capturing and examining network packets, users can understand how devices communicate and how different protocols operate.
+
+The project also introduces practical network troubleshooting techniques and basic security analysis.
+
+12. REFERENCES
+Wireshark Official Website: https://www.wireshark.org/
+Wireshark Documentation: https://www.wireshark.org/docs/
+RFC Editor: https://www.rfc-editor.org/
+TCP Specification: https://www.rfc-editor.org/rfc/rfc9293
+DNS Specification: https://www.rfc-editor.org/rfc/rfc1035
+TLS Specification: https://www.rfc-editor.org/rfc/rfc8446
+
+END OF REPORT
