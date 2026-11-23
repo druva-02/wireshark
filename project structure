@@ -1,0 +1,24 @@
+Wireshark-Network-Analysis/
+│
+├── README.md
+├── Wireshark_Protocol_Analysis_Report.md
+├── docs/
+│   ├── protocol_analysis.md
+│   └── security_observations.md
+│
+├── diagrams/
+│   ├── network_architecture.md
+│   ├── packet_capture_flow.md
+│   └── tcp_handshake.md
+│
+├── screenshots/
+│   ├── wireshark_dashboard.png
+│   ├── arp_packets.png
+│   ├── dns_packets.png
+│   ├── tcp_packets.png
+│   └── protocol_hierarchy.png
+│
+├── filters/
+│   └── wireshark_filters.txt
+│
+└── LICENSE
