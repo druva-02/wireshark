@@ -1,188 +1,283 @@
-🌐 Wireshark Network Protocol Analysis
+
+# Wireshark Network Protocol Analysis
 
 <p align="center">
-<img src="https://img.shields.io/badge/Tool-Wireshark-blue?logo=wireshark" />
-<img src="https://img.shields.io/badge/Domain-Cybersecurity-red" />
-<img src="https://img.shields.io/badge/Category-Network%20Analysis-green" />
-<img src="https://img.shields.io/badge/Status-Completed-success" />
+  <img src="https://img.shields.io/badge/Tool-Wireshark-blue?logo=wireshark" alt="Wireshark">
+  <img src="https://img.shields.io/badge/Domain-Cybersecurity-red" alt="Cybersecurity">
+  <img src="https://img.shields.io/badge/Category-Network%20Analysis-green" alt="Network Analysis">
+  <img src="https://img.shields.io/badge/Language-Markdown-lightgrey" alt="Markdown">
 </p>
 
-📌 Project Overview
+## 1. Project Overview
 
-This project focuses on network traffic monitoring and protocol analysis using Wireshark, an open-source network protocol analyzer.
+Wireshark Network Protocol Analysis is a networking and
+cybersecurity project focused on capturing, monitoring,
+and analyzing network traffic using Wireshark.
 
-The objective is to capture, inspect, and understand different network protocols involved in communication between devices.
+Wireshark is an open-source network protocol analyzer
+that allows users to inspect packets transmitted across
+a network.
 
-The project covers packet capturing, protocol identification, display filtering, TCP communication, DNS resolution, and basic network security observations.
+This project explores commonly used network protocols,
+packet capturing techniques, protocol identification,
+display filters, and basic network security observations.
 
-📑 Table of Contents
-Project Objectives
-Tools and Technologies
-Protocols Analyzed
-Network Architecture
-Packet Analysis Workflow
-TCP Three-Way Handshake
-DHCP DORA Process
-Wireshark Display Filters
-Project Directory Structure
-Installation and Usage
-Security Observations
-Learning Outcomes
-References
-🎯 Project Objectives
-Understand network communication and packet transmission.
-Capture live network traffic using Wireshark.
-Identify commonly used network protocols.
-Analyze packet headers and protocol information.
-Understand TCP connection establishment.
-Examine DNS queries and responses.
-Apply Wireshark display filters.
-Identify basic network security indicators.
-🛠️ Tools and Technologies
-Tool / Technology	Purpose
-Wireshark	Packet capturing and analysis
-TCP/IP	Network communication
-DNS	Domain name resolution
-DHCP	Dynamic IP assignment
-HTTP/HTTPS	Web communication
-ARP	IP-to-MAC resolution
-ICMP	Network diagnostics
-PCAPNG	Packet capture storage
-Windows/Linux	Operating system
-🔍 Protocols Analyzed
-Protocol	Port	Description
-ARP	N/A	Resolves IP addresses to MAC addresses
-DNS	53	Resolves domain names
-DHCP	67/68	Assigns IP configurations
-HTTP	80	Transfers web content
-HTTPS	443	Secure web communication
-TCP	N/A	Reliable data transmission
-UDP	N/A	Connectionless data transmission
-ICMP	N/A	Network diagnostics
-TLS	N/A	Encrypts network communication
-Protocol Descriptions
+## 2. Project Objectives
 
-1. ARP – Address Resolution Protocol
+- Understand network communication.
+- Capture network packets using Wireshark.
+- Identify different network protocols.
+- Analyze packet headers and communication details.
+- Understand TCP connection establishment.
+- Analyze DNS queries and responses.
+- Learn Wireshark display filters.
+- Identify basic network security indicators.
 
-ARP identifies the MAC address associated with an IPv4 address in a local network.
+## 3. Tools and Technologies
 
-2. DNS – Domain Name System
+| Tool / Technology | Purpose |
+|:---|:---|
+| Wireshark | Network packet analysis |
+| TCP/IP | Network communication |
+| ARP | IP-to-MAC address resolution |
+| DNS | Domain name resolution |
+| DHCP | Automatic IP configuration |
+| HTTP/HTTPS | Web communication |
+| ICMP | Network diagnostics |
+| TLS | Secure communication |
+| PCAPNG | Packet capture format |
+| Windows/Linux | Operating system |
 
-DNS translates domain names into IP addresses.
+## 4. Protocols Analyzed
 
-3. DHCP – Dynamic Host Configuration Protocol
+| Protocol | Port | Description |
+|:---|:---:|:---|
+| ARP | N/A | Maps IPv4 addresses to MAC addresses |
+| DNS | 53 | Resolves domain names into IP addresses |
+| DHCP | 67/68 | Assigns IP configuration |
+| HTTP | 80 | Transfers web content |
+| HTTPS | 443 | Secure web communication |
+| TCP | N/A | Reliable data transmission |
+| UDP | N/A | Connectionless communication |
+| ICMP | N/A | Network diagnostics |
+| TLS | N/A | Encrypts network communication |
 
-DHCP automatically assigns IP addresses and other network configuration parameters.
+### 4.1 ARP - Address Resolution Protocol
 
-4. TCP – Transmission Control Protocol
+ARP resolves an IPv4 address into its corresponding
+MAC address within a local network.
 
-TCP provides reliable and ordered communication between devices.
+**Display Filter:**
+`arp`
 
-5. UDP – User Datagram Protocol
+### 4.2 DNS - Domain Name System
 
-UDP provides connectionless communication with low overhead.
+DNS translates human-readable domain names into
+IP addresses.
 
-6. HTTP – Hypertext Transfer Protocol
+**Display Filter:**
+`dns`
 
-HTTP enables communication between web browsers and web servers.
+### 4.3 DHCP - Dynamic Host Configuration Protocol
 
-7. HTTPS – Hypertext Transfer Protocol Secure
+DHCP automatically assigns IP addresses and other
+network configuration details to devices.
 
-HTTPS protects web communication using TLS encryption.
+**Display Filter:**
+`dhcp`
 
-8. ICMP – Internet Control Message Protocol
+### 4.4 TCP - Transmission Control Protocol
 
-ICMP supports network diagnostics and error reporting.
+TCP provides reliable and ordered data transmission
+using acknowledgements, sequence numbers, and
+retransmissions.
 
-9. TLS – Transport Layer Security
+**Display Filter:**
+`tcp`
 
-TLS provides encryption and authentication for network communication.
+### 4.5 UDP - User Datagram Protocol
 
-🏗️ Network Architecture
+UDP provides connectionless communication with
+low overhead and is commonly used for DNS and
+real-time applications.
 
-The following diagram illustrates a basic network traffic monitoring environment.
+**Display Filter:**
+`udp`
 
-mermaid
+### 4.6 HTTP - Hypertext Transfer Protocol
+
+HTTP is an application-layer protocol used for
+communication between web browsers and servers.
+
+**Display Filter:**
+`http`
+
+### 4.7 HTTPS - Hypertext Transfer Protocol Secure
+
+HTTPS uses TLS to protect communication between
+web clients and servers through encryption.
+
+**Display Filter:**
+`tls`
+
+### 4.8 ICMP - Internet Control Message Protocol
+
+ICMP is used for network diagnostics and error
+reporting. The ping command commonly uses ICMP.
+
+**Display Filter:**
+`icmp`
+
+### 4.9 TLS - Transport Layer Security
+
+TLS provides encryption and authentication for
+network communications.
+
+**Display Filter:**
+`tls`
+
+---
+
+## 5. Network Architecture
+
+The following diagram represents a basic network
+environment monitored using Wireshark.
+
+```mermaid
+flowchart TB
+    A["Client Device"]
+    B["Wi-Fi / Ethernet"]
+    C["Router"]
+    D["Internet"]
+    E["Destination Server"]
+
+    F["Wireshark"]
+    G["Packet Capture"]
+    H["Protocol Analysis"]
+    I["Security Monitoring"]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+
+    B -.-> F
+    F --> G
+    G --> H
+    H --> I
+
+    classDef device fill:#dbeafe,stroke:#2563eb,color:#111827
+    classDef analysis fill:#dcfce7,stroke:#16a34a,color:#111827
+
+    class A,B,C,D,E device
+    class F,G,H,I analysis
+```
+
+## 6. Packet Capture Workflow
+
+The following flowchart describes the process
+of capturing and analyzing network traffic.
+
+```mermaid
 flowchart TD
-    A[Client Device] --> B[Wi-Fi / Ethernet]
-    B --> C[Router]
-    C --> D[Internet]
-    D --> E[Destination Server]
+    A(["Start"])
+    B["Open Wireshark"]
+    C["Select Network Interface"]
+    D["Start Packet Capture"]
+    E["Generate Network Traffic"]
+    F["Capture Packets"]
+    G["Apply Display Filters"]
+    H["Inspect Packet Details"]
+    I["Identify Protocols"]
+    J["Analyze Results"]
+    K["Export Capture File"]
+    L(["End"])
 
-    B --> F[Wireshark]
-    F --> G[Packet Capture]
-    G --> H[Protocol Identification]
-    H --> I[Traffic Analysis]
-    I --> J[Security Observations]
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G
+    G --> H
+    H --> I
+    I --> J
+    J --> K
+    K --> L
+```
 
-🔄 Packet Analysis Workflow
-mermaid
-flowchart TD
-    A([Start]) --> B[Open Wireshark]
-    B --> C[Select Network Interface]
-    C --> D[Start Packet Capture]
-    D --> E[Generate Network Traffic]
-    E --> F[Capture Packets]
-    F --> G[Apply Display Filters]
-    G --> H[Inspect Packet Details]
-    H --> I[Identify Protocols]
-    I --> J[Analyze Results]
-    J --> K[Export Capture File]
-    K --> L([End])
+## 7. TCP Three-Way Handshake
 
-🤝 TCP Three-Way Handshake
+TCP establishes a connection using a three-step
+handshake process.
 
-TCP establishes a connection using three steps.
-
-mermaid
+```mermaid
 sequenceDiagram
     participant Client
     participant Server
 
     Client->>Server: SYN
+    Note right of Client: Connection request
+
     Server-->>Client: SYN-ACK
+    Note left of Server: Request acknowledged
+
     Client->>Server: ACK
+    Note right of Client: Final acknowledgement
 
-    Note over Client,Server: TCP Connection Established
+    Note over Client,Server: Connection Established
+```
 
-Explanation
-SYN: Client requests a connection.
-SYN-ACK: Server acknowledges the request.
-ACK: Client confirms the connection.
-📡 DHCP DORA Process
+### Explanation
 
-DHCP uses four steps to assign network configuration.
+1. SYN: Client requests a connection.
+2. SYN-ACK: Server acknowledges the request.
+3. ACK: Client confirms the connection.
 
-mermaid
+## 8. DHCP DORA Process
+
+DHCP uses four stages to assign network
+configuration to a client device.
+
+```mermaid
 sequenceDiagram
     participant Client
-    participant DHCP_Server
+    participant DHCP_Server as DHCP Server
 
     Client->>DHCP_Server: DHCP Discover
     DHCP_Server-->>Client: DHCP Offer
+
     Client->>DHCP_Server: DHCP Request
     DHCP_Server-->>Client: DHCP Acknowledge
 
     Note over Client,DHCP_Server: IP Configuration Assigned
+```
 
-🔎 Wireshark Display Filters
-Protocol / Purpose	Display Filter
-ARP	arp
-DNS	dns
-DHCP	dhcp
-TCP	tcp
-UDP	udp
-HTTP	http
-TLS	tls
-ICMP	icmp
-Specific IP	ip.addr == 192.168.1.1
-Source IP	ip.src == 192.168.1.1
-Destination IP	ip.dst == 192.168.1.1
-TCP Port 443	tcp.port == 443
-DNS Queries	dns.flags.response == 0
-TCP SYN	tcp.flags.syn == 1
-📁 Project Directory Structure
-text
+## 9. Wireshark Display Filters
+
+The following filters can be used to identify
+specific types of network traffic.
+
+| Purpose | Display Filter |
+|:---|:---|
+| ARP packets | `arp` |
+| DNS packets | `dns` |
+| DHCP packets | `dhcp` |
+| TCP packets | `tcp` |
+| UDP packets | `udp` |
+| HTTP packets | `http` |
+| TLS packets | `tls` |
+| ICMP packets | `icmp` |
+| Specific IP | `ip.addr == 192.168.1.1` |
+| Source IP | `ip.src == 192.168.1.1` |
+| Destination IP | `ip.dst == 192.168.1.1` |
+| TCP port 443 | `tcp.port == 443` |
+| DNS queries | `dns.flags.response == 0` |
+| TCP SYN packets | `tcp.flags.syn == 1` |
+
+## 10. Project Directory Structure
+
+```text
 Wireshark-Network-Analysis/
 │
 ├── README.md
@@ -211,31 +306,36 @@ Wireshark-Network-Analysis/
 │
 └── filters/
     └── wireshark_filters.txt
+```
 
-⚙️ Installation and Usage
-Step 1: Install Wireshark
+## 11. Installation and Usage
 
-Download Wireshark from:
+### Step 1: Download Wireshark
+
+Download Wireshark from its official website:
 
 https://www.wireshark.org/download.html
 
-Step 2: Open Wireshark
+### Step 2: Launch Wireshark
 
-Launch Wireshark and select the active network interface.
+Open Wireshark and select the active network
+interface, such as Wi-Fi or Ethernet.
 
-Step 3: Start Packet Capture
+### Step 3: Start Packet Capture
 
-Click the Start Capture button.
+Click the Start Capture button to begin
+monitoring network traffic.
 
-Step 4: Generate Network Traffic
+### Step 4: Generate Network Traffic
 
-Use a browser or network diagnostic commands to generate traffic.
+Generate traffic using a web browser or
+network diagnostic commands.
 
-Step 5: Apply Display Filters
+### Step 5: Apply Display Filters
 
 Examples:
 
-bash
+```text
 arp
 dns
 tcp
@@ -243,68 +343,132 @@ udp
 http
 tls
 icmp
+```
 
-Step 6: Analyze Packets
+### Step 6: Inspect Packets
 
-Inspect:
+Analyze the following information:
 
-Source IP address
-Destination IP address
-Source and destination ports
-Protocol type
-Packet length
-Packet details
-Step 7: Export Capture
+- Source IP address
+- Destination IP address
+- Source and destination ports
+- Protocol type
+- Packet length
+- Packet details
 
-Save the capture in PCAPNG format for future analysis.
+### Step 7: Export Capture
 
-🛡️ Security Observations
+Save the captured network traffic in PCAPNG
+format for future analysis.
 
-Wireshark can help identify potentially suspicious network behavior.
+## 12. Security Observations
 
-Observation	Possible Concern
-Unencrypted HTTP	Sensitive data exposure
-Unusual DNS requests	Suspicious domain communication
-Repeated TCP attempts	Connectivity issues or scanning
-Unexpected ARP responses	Possible ARP spoofing
-High retransmissions	Network performance problems
-Unknown destinations	Requires further investigation
+Wireshark can help identify unusual network
+communication patterns.
 
-These indicators require additional analysis before concluding that an attack has occurred.
+| Observation | Possible Concern |
+|:---|:---|
+| Unencrypted HTTP traffic | Sensitive data exposure |
+| Unexpected DNS requests | Suspicious domain communication |
+| Repeated TCP attempts | Connectivity issues or scanning |
+| Unusual ARP responses | Possible ARP spoofing |
+| High retransmissions | Network performance issues |
+| Unknown destinations | Requires further investigation |
 
-📊 Learning Outcomes
+These observations are indicators for further
+investigation and do not independently prove
+malicious activity.
 
-After completing this project, the following concepts can be understood:
+## 13. Learning Outcomes
 
-Network packet capturing.
-OSI and TCP/IP communication.
-Protocol identification.
-TCP three-way handshake.
-DNS query and response.
-DHCP address assignment.
-Wireshark display filtering.
-Basic network security monitoring.
-📚 References
-Wireshark Official Website
-Wireshark Documentation
-RFC Editor
-TCP Specification – RFC 9293
-DNS Specification – RFC 1035
-TLS Specification – RFC 8446
-⚠️ Disclaimer
+After completing this project, the following
+concepts can be understood:
 
-This project is intended strictly for educational purposes and authorized network analysis.
+- Network packet capturing.
+- TCP/IP communication.
+- OSI model and network protocols.
+- TCP three-way handshake.
+- DNS query and response analysis.
+- DHCP address assignment.
+- Wireshark display filtering.
+- Basic network security monitoring.
 
-Only capture and analyze network traffic on systems and networks where you have permission.
+## 14. Results and Discussion
 
-👨‍💻 Project Information
+The project provides a practical understanding
+of network packet analysis using Wireshark.
 
-Project Name: Wireshark Network Protocol Analysis
+Protocol identification and packet inspection
+help explain how devices communicate over
+a network.
 
-Domain: Networking and Cybersecurity
+The Protocol Hierarchy, Conversations, and
+Endpoints features can be used to examine
+captured network traffic.
 
-Primary Tool: Wireshark
+**Note:** Actual packet counts, protocol
+percentages, IP addresses, and experimental
+screenshots should be added after performing
+a real packet capture.
 
-Project Category: Practical Network Analysis
+## 15. Conclusion
 
-⭐ If you find this project useful, consider giving the repository a star!
+Wireshark is an effective tool for understanding
+network communication and analyzing network
+protocols.
+
+This project demonstrates packet capturing,
+protocol identification, display filtering, and
+basic network security observations.
+
+It provides a foundation for further learning
+in networking, cybersecurity, and network
+troubleshooting.
+
+## 16. References
+
+1. Wireshark Official Website:
+   https://www.wireshark.org/
+
+2. Wireshark Documentation:
+   https://www.wireshark.org/docs/
+
+3. RFC Editor:
+   https://www.rfc-editor.org/
+
+4. TCP Specification - RFC 9293:
+   https://www.rfc-editor.org/rfc/rfc9293
+
+5. DNS Specification - RFC 1035:
+   https://www.rfc-editor.org/rfc/rfc1035
+
+6. TLS Specification - RFC 8446:
+   https://www.rfc-editor.org/rfc/rfc8446
+
+---
+
+## Project Information
+
+| Field | Details |
+|:---|:---|
+| Project Name | Wireshark Network Protocol Analysis |
+| Domain | Networking and Cybersecurity |
+| Primary Tool | Wireshark |
+| Project Type | Practical Analysis |
+| File Format | PCAPNG / Markdown |
+
+## Disclaimer
+
+This project is intended for educational purposes
+and authorized network analysis only.
+
+Only capture and analyze network traffic on
+systems and networks where you have permission.
+
+---
+
+<p align="center">
+  <b>Wireshark Network Protocol Analysis</b>
+  <br>
+  Learning Networking Through Packet Analysis
+</p>
