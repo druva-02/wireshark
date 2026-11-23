@@ -1,0 +1,46 @@
+1. Network Architecture
+flowchart TD
+    A["Client Device"] --> B["Wi-Fi / Ethernet"]
+    B --> C["Router"]
+    C --> D["Internet"]
+    D --> E["DNS / Web Server"]
+    B --> F["Wireshark"]
+    F --> G["Packet Capture"]
+    G --> H["Protocol Analysis"]
+    H --> I["Network Report"]
+
+2.wireshark packet analysis workflow
+flowchart TD
+    A["Client Device"] --> B["Wi-Fi / Ethernet"]
+    B --> C["Router"]
+    C --> D["Internet"]
+    D --> E["DNS / Web Server"]
+    B --> F["Wireshark"]
+    F --> G["Packet Capture"]
+    G --> H["Protocol Analysis"]
+    H --> I["Network Report"]
+
+3.TCP three-way handshake
+ 
+sequenceDiagram
+    participant C as Client
+    participant S as Server
+
+    C->>S: SYN
+    Note over C,S: Connection request
+    S-->>C: SYN-ACK
+    Note over C,S: Server accepts request
+    C->>S: ACK
+    Note over C,S: Connection established
+
+4: DHCP DORA process
+sequenceDiagram
+    participant D as DHCP Client
+    participant S as DHCP Server
+
+    D->>S: DHCP Discover
+    S-->>D: DHCP Offer
+    D->>S: DHCP Request
+    S-->>D: DHCP Acknowledge
+    Note over D,S: IP configuration assigned
+
